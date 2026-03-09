@@ -112,7 +112,7 @@ Use the date-checker subagent to determine the current date in YYYY-MM-DD format
 
 ### Step 5: Spec Folder Creation
 
-Use the file-creator subagent to create directory: .agent-os/specs/YYYY-MM-DD-spec-name/ using the date from step 4.
+Use the file-creator subagent to create directory: @specs/YYYY-MM-DD-spec-name/ using the date from step 4.
 
 Use kebab-case for spec name. Maximum 5 words in name.
 
@@ -267,7 +267,7 @@ Use the file-creator subagent to create the file: sub-specs/technical-spec.md us
   <header>
     # Technical Specification
 
-    This is the technical specification for the spec detailed in @.agent-os/specs/YYYY-MM-DD-spec-name/spec.md
+    This is the technical specification for the spec detailed in @specs/YYYY-MM-DD-spec-name/spec.md
   </header>
 </file_template>
 

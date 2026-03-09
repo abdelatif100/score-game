@@ -13,7 +13,7 @@ encoding: UTF-8
 Generate detailed feature specifications aligned with product roadmap and mission.
 
 <pre_flight_check>
-  EXECUTE: @.agent-os/instructions/meta/pre-flight.md
+  EXECUTE: @system_promp/instructions/meta/pre-flight.md
 </pre_flight_check>
 
 <process_flow>

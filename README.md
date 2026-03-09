@@ -63,45 +63,6 @@ A fast, simple, and transparent video game store information website that helps 
 
 ---
 
-## 🗺️ Product Roadmap
-
-### Phase 1: MVP Core
-**Goal:** Establish the public website and admin dashboard with essential functionality
-
-- [ ] Public Homepage - Simple landing page with clear navigation
-- [ ] Console Availability Dashboard - List showing real-time status and pricing
-- [ ] Game Catalog - Browseable grid view of all available games
-- [ ] Admin Dashboard - Interface for status updates and game/console management
-- [ ] Google Login Auth - Secure admin-only access for staff
-
-### Phase 2: Performance & Polish
-**Goal:** Ensure the site is extremely fast and mobile-friendly
-
-- [ ] Image Optimization - Automated compression for game covers and icons
-- [ ] SEO & Metadata - Basic search engine optimization for store visibility
-- [ ] UI/UX Polishing - Refining the interface with shadcn/ui components
-
-### Phase 3: Future Scale
-**Goal:** Add advanced convenience features based on user demand
-
-- [ ] Online Reservation System - Allow customers to book time slots
-- [ ] Real-time Notifications - Alert customers when a console becomes free
-
----
-
-## 📋 Project Documentation
-
-For detailed information, see:
-
-- **Product Mission:** [product/mission.md](./product/mission.md)
-- **Product Roadmap:** [product/roadmap.md](./product/roadmap.md)
-- **Technical Stack:** [product/tech-stack.md](./product/tech-stack.md)
-- **Condensed Mission:** [product/mission-lite.md](./product/mission-lite.md)
-
----
-
-## 🚀 Getting Started
-
 > Development setup instructions coming soon.
 
 ---

@@ -63,10 +63,3 @@ A fast, simple, and transparent video game store information website that helps 
 
 ---
 
-> Development setup instructions coming soon.
-
----
-
-## 📞 Support
-
-For questions about the product vision or roadmap, see the documentation links above.

@@ -23,7 +23,7 @@ Generate detailed feature specifications aligned with product roadmap and missio
 ### Step 1: Spec Initiation
 
 Use the context-fetcher subagent to identify spec initiation method by either finding the next uncompleted roadmap item when user asks "what's next?" or accepting a specific spec idea from the user.
-
+```
 <option_a_flow>
   <trigger_phrases>
     - "what's next?"
@@ -41,7 +41,7 @@ Use the context-fetcher subagent to identify spec initiation method by either fi
   <accept>any format, length, or detail level</accept>
   <proceed>to context gathering</proceed>
 </option_b_flow>
-
+```
 </step>
 
 <step number="2" subagent="context-fetcher" name="context_gathering">

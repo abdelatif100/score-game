@@ -1,3 +1,8 @@
+```
+use this @.agents/skills as skill for your project
+
+```
+
 ## Analyze Product
 
 Refer to the instructions located in this file:

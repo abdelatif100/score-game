@@ -2,18 +2,18 @@
 
 ## Tasks
 
-- [ ] 1. **Database Schema & Data Layer**
-  - [ ] 1.1 Create Prisma/Drizzle schema (or SQL migrations) for `consoles`, `games`, and `console_games`
-  - [ ] 1.2 Seed the database with at least 3 consoles and 10 games for testing
-  - [ ] 1.3 Implement Server Actions/Functions to fetch console list with game previews
-  - [ ] 1.4 Implement Server Actions/Functions to fetch single console details
-  - [ ] 1.5 Write integration tests for data fetching logic
+- [x] 1. **Database Schema & Data Layer**
+  - [x] 1.1 Create Prisma/Drizzle schema (or SQL migrations) for `consoles`, `games`, and `console_games`
+  - [x] 1.2 Seed the database with at least 3 consoles and 10 games for testing
+  - [x] 1.3 Implement Server Actions/Functions to fetch console list with game previews
+  - [x] 1.4 Implement Server Actions/Functions to fetch single console details
+  - [x] 1.5 Write integration tests for data fetching logic
 
-- [ ] 2. **Shared UI Components**
-  - [ ] 2.1 Create a `StatusBadge` component using shadcn/ui Badge
-  - [ ] 2.2 Implement the `PricingHeader` component as defined in the PRD (50/100/200 DZD tiers)
-  - [ ] 2.3 Create a `ConsoleCard` component displaying status, pricing, and game preview icons
-  - [ ] 2.4 Verify components are responsive and accessible via unit tests/Storybook
+- [x] 2. **Shared UI Components**
+  - [x] 2.1 Create a `StatusBadge` component using shadcn/ui Badge
+  - [x] 2.2 Implement the `PricingHeader` component as defined in the PRD (50/100/200 DZD tiers)
+  - [x] 2.3 Create a `ConsoleCard` component displaying status, pricing, and game preview icons
+  - [x] 2.4 Verify components are responsive and accessible via unit tests/Storybook
 
 - [ ] 3. **Console Dashboard Page (`/consoles`)**
   - [ ] 3.1 Setup `app/consoles/page.tsx` with a responsive grid layout

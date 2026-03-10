@@ -6,7 +6,7 @@
 
 ### Features
 - [x] **Public Homepage:** Simple landing page with clear navigation. `[S]`
-- [ ] **Console Availability Dashboard:** List showing real-time status and pricing. `[M]`
+- [x] **Console Availability Dashboard:** List showing real-time status and pricing. `[M]`
 - [ ] **Game Catalog:** Browseable grid view of all available games. `[M]`
 - [ ] **Admin Dashboard:** Interface for status updates and game/console management. `[L]`
 - [ ] **Google Login Auth:** Secure admin-only access for staff. `[S]`

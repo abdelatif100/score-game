@@ -5,7 +5,7 @@
 **Success Criteria:** Customers can view availability; Admin can update status and games.
 
 ### Features
-- [ ] **Public Homepage:** Simple landing page with clear navigation. `[S]`
+- [x] **Public Homepage:** Simple landing page with clear navigation. `[S]`
 - [ ] **Console Availability Dashboard:** List showing real-time status and pricing. `[M]`
 - [ ] **Game Catalog:** Browseable grid view of all available games. `[M]`
 - [ ] **Admin Dashboard:** Interface for status updates and game/console management. `[L]`

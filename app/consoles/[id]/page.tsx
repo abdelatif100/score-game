@@ -121,11 +121,15 @@ export default async function ConsoleDetailsPage({
             <CardContent className="p-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
                 {consoleItem.allGames.map((game) => (
-                  <div key={game.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-50 transition-colors group">
-                    <div className="h-2 w-2 rounded-full bg-zinc-200 group-hover:bg-zinc-400 transition-colors" />
-                    <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{game.name}</span>
-                    <ArrowLeft className="h-3 w-3 mr-auto opacity-0 group-hover:opacity-100 transition-all text-zinc-300" />
-                  </div>
+                  <Link 
+                    key={game.id} 
+                    href={`/games/${game.id}`}
+                    className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-100 transition-colors group border border-transparent hover:border-zinc-200"
+                  >
+                    <div className="h-2 w-2 rounded-full bg-zinc-200 group-hover:bg-blue-500 transition-colors" />
+                    <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300 group-hover:text-blue-600 transition-colors">{game.name}</span>
+                    <ArrowLeft className="h-3 w-3 mr-auto opacity-0 group-hover:opacity-100 transition-all text-zinc-400" />
+                  </Link>
                 ))}
               </div>
             </CardContent>

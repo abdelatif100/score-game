@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider   = "prisma-client-js"
+  engineType = "library"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ConsoleStatus {
+  available
+  reserved
+}
+
+model Console {
+  id        String        @id @default(uuid())
+  name      String
+  status    ConsoleStatus @default(available)
+  games     ConsoleGame[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("consoles")
+}
+
+model Game {
+  id          String        @id @default(uuid())
+  name        String
+  imageUrl    String?       @map("image_url")
+  description String
+  consoles    ConsoleGame[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@map("games")
+}
+
+model ConsoleGame {
+  id        String   @id @default(uuid())
+  console   Console  @relation(fields: [consoleId], references: [id], onDelete: Cascade)
+  consoleId String   @map("console_id")
+  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  gameId    String   @map("game_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@unique([consoleId, gameId])
+  @@map("console_games")
+}
+
+model AdminUser {
+  id         String   @id @default(uuid())
+  email      String   @unique
+  isApproved Boolean  @default(false) @map("is_approved")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  @@map("admin_users")
+}

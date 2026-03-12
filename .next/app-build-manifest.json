@@ -10,6 +10,16 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
+    ],
+    "/consoles/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consoles/page.js"
+    ],
+    "/consoles/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/consoles/[id]/page.js"
     ]
   }
 }

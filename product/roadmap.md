@@ -9,8 +9,8 @@
 
 - [x] **Homepage Setup** - Simple landing page with @docs/homepage use /stitch. `[S]`
 - [x] **Console Listing & Status** - Display consoles with "Available/Reserved" status and pricing preview. `[M]`
-- [ ] **Pricing Section** - Permanently visible pricing explanation on the consoles page. `[XS]`
-- [ ] **Game Catalog Grid** - Browseable grid of all games in the store. `[S]`
+- [x] **Pricing Section** - Permanently visible pricing explanation on the consoles page. `[XS]`
+- [x] **Game Catalog Grid** - Browseable grid of all games in the store. `[S]`
 - [ ] **Console/Game Detail Pages** - Deep dive into specific console games and game descriptions. `[M]`
 
 ### Dependencies

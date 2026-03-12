@@ -1,12 +1,26 @@
+# Admin Dashboard Login
+
 ---
-title: Admin Login
-layout: login
+
+## Restricted Access
+
+This area is for store employees only.
+
 ---
 
-# Admin Login
+## Sign In
 
-Please sign in with your Google account.
+[ Sign in with Google ](/api/auth/google)
 
-[Sign in with Google](#)
+---
 
-*Only pre‑approved accounts can access the dashboard.*
+### Important Notes
+
+- Only pre-approved Google accounts can access the dashboard
+- New admin accounts must be approved manually in the database
+- No public registration is available
+- Contact the store owner if you need access
+
+---
+
+[ Return to Main Website ](/)

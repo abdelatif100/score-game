@@ -1,13 +1,24 @@
+# Video Game Store
+
+Your local destination for console gaming. Check availability and browse our game catalog before you visit.
+
 ---
-title: Home
-layout: homepage
+
+## Quick Access
+
+[ View Consoles ](/consoles)
+
+[ Browse Games ](/games)
+
 ---
 
-# Welcome to [Store Name]
+### Why Visit Us?
 
-Fast, simple, and up‑to‑date info about our consoles and games.
+- See real-time console availability
+- Browse our full game library
+- Know our pricing before you arrive
+- Save time and avoid phone calls
 
-<div style="display: flex; gap: 1rem; margin-top: 2rem;">
-  <a href="/consoles" class="button">View Consoles</a>
-  <a href="/games" class="button">Browse Games</a>
-</div>
+---
+
+**Visit us today** — no reservations needed, just walk in and play!

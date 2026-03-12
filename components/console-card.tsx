@@ -8,6 +8,11 @@ import { cn } from '@/lib/utils';
 
 export type ConsoleStatus = 'available' | 'reserved';
 
+const statusLabels: Record<ConsoleStatus, string> = {
+  available: 'متاح',
+  reserved: 'محجوز',
+};
+
 export interface PreviewGame {
   id: string;
   name: string;
@@ -38,16 +43,16 @@ export function ConsoleCard({ id, name, status, previewGames }: ConsoleCardProps
               isAvailable && "bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-400 dark:border-emerald-800"
             )}
           >
-            {status}
+            {statusLabels[status]}
           </Badge>
         </div>
-        <p className="text-sm text-zinc-500 font-medium">Starting from 50 DZD</p>
+        <p className="text-sm text-zinc-500 font-medium">يبدأ من 50 د.ج</p>
       </CardHeader>
       
       <CardContent className="pt-4">
         <h4 className="text-xs font-semibold text-zinc-400 uppercase tracking-tight mb-3 flex items-center gap-1.5">
           <Gamepad2 className="h-3 w-3" />
-          Installed Games Preview
+          معاينة الألعاب المثبتة
         </h4>
         <ul className="space-y-2">
           {previewGames.length > 0 ? (
@@ -58,11 +63,11 @@ export function ConsoleCard({ id, name, status, previewGames }: ConsoleCardProps
               </li>
             ))
           ) : (
-            <li className="text-sm text-zinc-400 italic">No games listed</li>
+            <li className="text-sm text-zinc-400 italic">لا توجد ألعاب مدرجة</li>
           )}
         </ul>
         {previewGames.length >= 5 && (
-          <p className="mt-3 text-[10px] text-zinc-400 italic"> + see more in details</p>
+          <p className="mt-3 text-[10px] text-zinc-400 italic"> + عرض المزيد من التفاصيل</p>
         )}
       </CardContent>
 
@@ -70,7 +75,7 @@ export function ConsoleCard({ id, name, status, previewGames }: ConsoleCardProps
         <Button asChild variant="secondary" className="w-full gap-2 text-xs h-9">
           <Link href={`/consoles/${id}`}>
             <Info className="h-3.5 w-3.5" />
-            See Full Console Details
+            عرض تفاصيل الجهاز كاملة
           </Link>
         </Button>
       </CardFooter>

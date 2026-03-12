@@ -43,10 +43,10 @@ export default async function ConsolesPage() {
     <div className="container mx-auto py-10 px-4 min-h-screen">
       <header className="mb-12 text-center">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4 italic uppercase">
-          Consoles & Availability
+          الأجهزة والتوفر
         </h1>
         <p className="text-zinc-500 max-w-2xl mx-auto">
-          Real-time availability of our gaming stations. Browse installed games and see pricing before you visit.
+          توفر أجهزة الألعاب في الوقت الفعلي. تصفح الألعاب المثبتة واطلع على الأسعار قبل زيارتك.
         </p>
       </header>
 
@@ -66,7 +66,7 @@ export default async function ConsolesPage() {
 
       {consoles.length === 0 && (
         <div className="text-center py-20 bg-zinc-50 rounded-xl border-2 border-dashed border-zinc-200">
-          <p className="text-zinc-400">No consoles found. Please check back later.</p>
+          <p className="text-zinc-400">لم يتم العثور على أجهزة. يرجى التحقق لاحقاً.</p>
         </div>
       )}
     </div>

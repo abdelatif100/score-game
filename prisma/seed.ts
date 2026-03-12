@@ -22,34 +22,34 @@ async function main() {
 
   // 2. Define Games
   const gamesData = [
-    { name: 'FIFA 23', description: 'Experience the world\'s game with Hypermotion2 technology.' },
-    { name: 'Call of Duty: Modern Warfare II', description: 'The sequel to the 2019 blockbuster Modern Warfare.' },
-    { name: 'Spider-Man: Miles Morales', description: 'Experience the rise of Miles Morales as the new Spider-Man.' },
-    { name: 'Gran Turismo 7', description: 'The ultimate driving simulator.' },
-    { name: 'God of War Ragnarök', description: 'Kratos and Atreus embark on a mythic journey for answers.' },
-    { name: 'Grand Theft Auto V', description: 'Explore the sprawling city of Los Santos.' },
-    { name: 'NBA 2K23', description: 'Rise to the occasion in NBA 2K23.' },
-    { name: 'Horizon Forbidden West', description: 'Join Aloy as she braves the Forbidden West.' },
-    { name: 'Elden Ring', description: 'Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring.' },
-    { name: 'Halo Infinite', description: 'The Master Chief returns in the most expansive Halo story yet.' },
-    { name: 'Forza Horizon 5', description: 'Your ultimate Horizon Adventure awaits!' },
-    { name: 'Gears 5', description: 'The world is crumbling. The Swarm has corrupted the Coalition’s robot army.' },
-    { name: 'Red Dead Redemption 2', description: 'An epic tale of life in America’s unforgiving heartland.' },
-    { name: 'Fortnite', description: 'The high-stakes battle royale game.' },
-    { name: 'Rocket League', description: 'High-powered hybrid of arcade-style soccer and vehicular mayhem.' },
-    { name: 'Minecraft', description: 'Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.' },
-    { name: 'Fall Guys', description: 'The ultimate knockout party game.' },
-    { name: 'Sea of Thieves', description: 'Become the pirate you want to be in a shared world adventure.' },
-    { name: 'Mario Kart 8 Deluxe', description: 'The ultimate version of Mario Kart 8.' },
-    { name: 'The Legend of Zelda: Breath of the Wild', description: 'Step into a world of discovery, exploration, and adventure.' },
-    { name: 'Super Mario Odyssey', description: 'Join Mario on a massive, globe-trotting 3D adventure.' },
-    { name: 'Animal Crossing: New Horizons', description: 'Escape to a deserted island and create your own paradise.' },
-    { name: 'Luigi\'s Mansion 3', description: 'Luigi is invited to the towering Last Resort hotel.' },
-    { name: 'Pokémon Scarlet', description: 'The newest chapters in the Pokémon series.' },
-    { name: 'Pokémon Violet', description: 'The newest chapters in the Pokémon series.' },
-    { name: 'Super Smash Bros. Ultimate', description: 'Legendary game worlds and fighters collide.' },
-    { name: 'Splatoon 3', description: 'Enter the Splatlands, a sun-scorched desert inhabited by battle-hardened Inklings and Octolings.' },
-    { name: 'Kirby and the Forgotten Land', description: 'Join Kirby in an unforgettable journey through a mysterious world.' },
+    { name: 'فيفا 23', description: 'اختبر لعبة العالم مع تقنية هايبر موشن 2.' },
+    { name: 'كول أوف ديوتي: مودرن وورفير 2', description: 'تتمة للعبة مودرن وورفير الأكثر مبيعاً لعام 2019.' },
+    { name: 'سبايدر مان: مايلز موراليس', description: 'عش تجربة صعود مايلز موراليس كسبايدر مان الجديد.' },
+    { name: 'جران توريزمو 7', description: 'محاكي القيادة النهائي.' },
+    { name: 'جود أوف وار راجناروك', description: 'ينطلق كراتوس وأتريوس في رحلة أسطورية بحثاً عن إجابات.' },
+    { name: 'جراند ثيفت أوتو 5', description: 'استكشف مدينة لوس سانتوس المترامية الأطراف.' },
+    { name: 'إن بي إيه 2K23', description: 'ارتقِ إلى مستوى التحدي في إن بي إيه 2K23.' },
+    { name: 'هورايزن فوربيدن ويست', description: 'انضم إلى ألوي وهي تواجه الغرب المحظور.' },
+    { name: 'إلدن رينج', description: 'قم يا تيرنيشد، واسترشد بالنعمة لاستخدام قوة إلدن رينج.' },
+    { name: 'هالو إنفينيت', description: 'يعود الماستر شيف في أكثر قصة هالو توسعاً حتى الآن.' },
+    { name: 'فورزا هورايزن 5', description: 'مغامرة هورايزن النهائية في انتظارك!' },
+    { name: 'جيرز 5', description: 'العالم ينهار. لقد أفسد السرب جيش الروبوتات التابع للتحالف.' },
+    { name: 'ريد ديد ريدمبشن 2', description: 'قصة ملحمية عن الحياة في قلب أمريكا القاسي.' },
+    { name: 'فورتنايت', description: 'لعبة الباتل رويال ذات المخاطر العالية.' },
+    { name: 'روكيت ليج', description: 'مزيج عالي القوة بين كرة القدم بأسلوب الآركيد وفوضى المركبات.' },
+    { name: 'ماينكرافت', description: 'استكشف عوالم لا نهائية وابنِ كل شيء من أبسط المنازل إلى أفخم القلاع.' },
+    { name: 'فال جايز', description: 'لعبة الحفلات النهائية بالضربة القاضية.' },
+    { name: 'سي أوف ثيفز', description: 'كن القرصان الذي تريد أن تكونه في مغامرة عالم مشترك.' },
+    { name: 'ماريو كارت 8 ديلوكس', description: 'النسخة النهائية من ماريو كارت 8.' },
+    { name: 'ذا ليجند أوف زيلدا: بريث أوف ذا وايلد', description: 'ادخل إلى عالم من الاكتشاف والاستكشاف والمغامرة.' },
+    { name: 'سوبر ماريو أوديسي', description: 'انضم إلى ماريو في مغامرة ثلاثية الأبعاد ضخمة تجوب العالم.' },
+    { name: 'أنيمال كروسينج: نيو هورايزونز', description: 'اهرب إلى جزيرة مهجورة وأنشئ جنتك الخاصة.' },
+    { name: 'لويجيز مانشن 3', description: 'تمت دعوة لويجي إلى فندق لاست ريزورت الشاهق.' },
+    { name: 'بوكيمون سكارليت', description: 'أحدث فصول سلسلة بوكيمون.' },
+    { name: 'بوكيمون فيوليت', description: 'أحدث فصول سلسلة بوكيمون.' },
+    { name: 'سوبر سماش بروز التيميت', description: 'عوالم ألعاب ومقاتلون أسطوريون يتصادمون.' },
+    { name: 'سبيليتون 3', description: 'ادخل إلى سبلاتلاندز، الصحراء المشمسة التي يسكنها الإنكلينجز والأوكتولينجز المتمرسون في المعارك.' },
+    { name: 'كيربي أند ذا فورجوتن لاند', description: 'انضم إلى كيربي في رحلة لا تُنسى عبر عالم غامض.' },
   ]
 
   const games: Record<string, any> = {}
@@ -61,34 +61,34 @@ async function main() {
   // 3. Define Consoles & Assign Games
   const consolesData = [
     {
-      name: 'PlayStation 5 #1',
+      name: 'بلايستيشن 5 #1',
       status: 'available',
-      games: ['FIFA 23', 'Call of Duty: Modern Warfare II', 'Spider-Man: Miles Morales', 'Gran Turismo 7', 'God of War Ragnarök']
+      games: ['فيفا 23', 'كول أوف ديوتي: مودرن وورفير 2', 'سبايدر مان: مايلز موراليس', 'جران توريزمو 7', 'جود أوف وار راجناروك']
     },
     {
-      name: 'PlayStation 5 #2',
+      name: 'بلايستيشن 5 #2',
       status: 'available',
-      games: ['FIFA 23', 'Grand Theft Auto V', 'NBA 2K23', 'Horizon Forbidden West', 'Elden Ring']
+      games: ['فيفا 23', 'جراند ثيفت أوتو 5', 'إن بي إيه 2K23', 'هورايزن فوربيدن ويست', 'إلدن رينج']
     },
     {
-      name: 'Xbox Series X',
+      name: 'إكس بوكس سيريس X',
       status: 'reserved',
-      games: ['Halo Infinite', 'Forza Horizon 5', 'Gears 5', 'Red Dead Redemption 2', 'Elden Ring']
+      games: ['هالو إنفينيت', 'فورزا هورايزن 5', 'جيرز 5', 'ريد ديد ريدمبشن 2', 'إلدن رينج']
     },
     {
-      name: 'Xbox Series S',
+      name: 'إكس بوكس سيريس S',
       status: 'available',
-      games: ['Fortnite', 'Rocket League', 'Minecraft', 'Fall Guys', 'Sea of Thieves']
+      games: ['فورتنايت', 'روكيت ليج', 'ماينكرافت', 'فال جايز', 'سي أوف ثيفز']
     },
     {
-      name: 'Nintendo Switch',
+      name: 'نينتندو سويتش',
       status: 'available',
-      games: ['Mario Kart 8 Deluxe', 'The Legend of Zelda: Breath of the Wild', 'Super Mario Odyssey', 'Animal Crossing: New Horizons', 'Luigi\'s Mansion 3']
+      games: ['ماريو كارت 8 ديلوكس', 'ذا ليجند أوف زيلدا: بريث أوف ذا وايلد', 'سوبر ماريو أوديسي', 'أنيمال كروسينج: نيو هورايزونز', 'لويجيز مانشن 3']
     },
     {
-      name: 'Nintendo Switch Lite',
+      name: 'نينتندو سويتش لايت',
       status: 'reserved',
-      games: ['Pokémon Scarlet', 'Pokémon Violet', 'Super Smash Bros. Ultimate', 'Splatoon 3', 'Kirby and the Forgotten Land']
+      games: ['بوكيمون سكارليت', 'بوكيمون فيوليت', 'سوبر سماش بروز التيميت', 'سبيليتون 3', 'كيربي أند ذا فورجوتن لاند']
     }
   ]
 

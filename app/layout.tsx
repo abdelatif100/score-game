@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Cairo } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["arabic", "latin"] });
 
 export const metadata: Metadata = {
-  title: "Video Game Store | Real-time Console Availability",
-  description: "Check console status and browse our game catalog before you visit. No reservations needed, just walk in and play!",
+  title: "متجر ألعاب الفيديو | حالة الأجهزة في الوقت الفعلي",
+  description: "تحقق من حالة الأجهزة وتصفح قائمة ألعابنا قبل زيارتك. لا حاجة للحجز، فقط تفضل بالدخول واللعب!",
 };
 
 export default function RootLayout({
@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir="rtl" className="dark">
+      <body className={cairo.className}>{children}</body>
     </html>
   );
 }

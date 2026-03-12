@@ -5,18 +5,23 @@ import { prisma } from '@/lib/prisma';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { ChevronLeft, Monitor, Clock, Gamepad2, ArrowRight } from 'lucide-react';
+import { ChevronRight, Monitor, Clock, Gamepad2, ArrowLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export const revalidate = 60;
 
 const fullPricing = [
-  { duration: '10 minutes', price: '50 DZD' },
-  { duration: '30 minutes', price: '100 DZD' },
-  { duration: '1 hour', price: '200 DZD' },
-  { duration: '2 hours', price: '400 DZD' },
-  { duration: '3 hours', price: '600 DZD' },
+  { duration: '10 دقائق', price: '50 د.ج' },
+  { duration: '30 دقيقة', price: '100 د.ج' },
+  { duration: 'ساعة واحدة', price: '200 د.ج' },
+  { duration: 'ساعتان', price: '400 د.ج' },
+  { duration: '3 ساعات', price: '600 د.ج' },
 ];
+
+const statusLabels: Record<string, string> = {
+  available: 'متاح',
+  reserved: 'محجوز',
+};
 
 async function getConsole(id: string) {
   const consoleItem = await prisma.console.findUnique({
@@ -56,8 +61,8 @@ export default async function ConsoleDetailsPage({
     <div className="container mx-auto py-10 px-4 max-w-5xl min-h-screen">
       <Button asChild variant="ghost" className="mb-8 hover:bg-zinc-100 transition-colors">
         <Link href="/consoles" className="flex items-center gap-2 text-zinc-500">
-          <ChevronLeft className="h-4 w-4" />
-          Back to All Consoles
+          <ChevronRight className="h-4 w-4" />
+          العودة إلى كل الأجهزة
         </Link>
       </Button>
 
@@ -74,7 +79,7 @@ export default async function ConsoleDetailsPage({
                     isAvailable ? "bg-emerald-500 hover:bg-emerald-600 text-white border-none" : "bg-zinc-700 text-zinc-300 border-none"
                   )}
                 >
-                  {consoleItem.status}
+                  {statusLabels[consoleItem.status] || consoleItem.status}
                 </Badge>
               </div>
               <CardTitle className="text-2xl font-bold tracking-tight">{consoleItem.name}</CardTitle>
@@ -83,7 +88,7 @@ export default async function ConsoleDetailsPage({
               <div className="p-6 border-b bg-zinc-50/50">
                 <h3 className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-4 flex items-center gap-2">
                   <Clock className="h-3.5 w-3.5" />
-                  Full Pricing Breakdown
+                  تفاصيل الأسعار الكاملة
                 </h3>
                 <div className="space-y-3">
                   {fullPricing.map((tier) => (
@@ -94,7 +99,7 @@ export default async function ConsoleDetailsPage({
                   ))}
                 </div>
                 <p className="mt-4 text-[10px] text-zinc-400 italic leading-relaxed">
-                  * Pricing is calculated automatically based on standard rates. No discounts currently applied.
+                  * يتم احتساب الأسعار تلقائياً بناءً على المعدلات القياسية. لا توجد خصومات مطبقة حالياً.
                 </p>
               </div>
             </CardContent>
@@ -107,10 +112,10 @@ export default async function ConsoleDetailsPage({
             <CardHeader className="border-b bg-zinc-50/30">
               <CardTitle className="text-xl font-bold flex items-center gap-2">
                 <Gamepad2 className="h-5 w-5 text-zinc-500" />
-                Complete List of Installed Games
+                قائمة الألعاب المثبتة الكاملة
               </CardTitle>
               <p className="text-sm text-zinc-400">
-                All {consoleItem.allGames.length} games available on this {consoleItem.name}.
+                جميع الـ {consoleItem.allGames.length} ألعاب المتاحة على هذا الـ {consoleItem.name}.
               </p>
             </CardHeader>
             <CardContent className="p-6">
@@ -119,7 +124,7 @@ export default async function ConsoleDetailsPage({
                   <div key={game.id} className="flex items-center gap-3 p-2 rounded-lg hover:bg-zinc-50 transition-colors group">
                     <div className="h-2 w-2 rounded-full bg-zinc-200 group-hover:bg-zinc-400 transition-colors" />
                     <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{game.name}</span>
-                    <ArrowRight className="h-3 w-3 ml-auto opacity-0 group-hover:opacity-100 transition-all text-zinc-300" />
+                    <ArrowLeft className="h-3 w-3 mr-auto opacity-0 group-hover:opacity-100 transition-all text-zinc-300" />
                   </div>
                 ))}
               </div>

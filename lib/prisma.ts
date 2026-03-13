@@ -21,6 +21,8 @@ export const prisma =
       return new PrismaClient()
     }
     const pool = new pg.Pool({ connectionString })
+    // Use type suppression only for this specific line if types are incompatible
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const adapter = new PrismaPg(pool as any)
     return new PrismaClient({ adapter })
   })()

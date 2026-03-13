@@ -4,6 +4,16 @@ import Google from "next-auth/providers/google"
 import { prisma } from "@/lib/prisma"
 import { authConfig } from "./auth.config"
 
+// Debug log for production environment check
+if (process.env.NODE_ENV === "production") {
+  console.log("NextAuth environment check:", {
+    hasSecret: !!process.env.AUTH_SECRET,
+    hasGoogleId: !!process.env.AUTH_GOOGLE_ID,
+    hasGoogleSecret: !!process.env.AUTH_GOOGLE_SECRET,
+    hasDbUrl: !!process.env.DATABASE_URL
+  });
+}
+
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   secret: process.env.AUTH_SECRET,

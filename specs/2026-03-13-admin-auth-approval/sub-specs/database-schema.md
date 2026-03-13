@@ -1,55 +1,16 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
+# Database Schema
 
-generator client {
-  provider   = "prisma-client-js"
-  engineType = "library"
-}
+This is the database schema implementation for the Admin Authentication & Approval flow.
 
-datasource db {
-  provider = "postgresql"
-}
+## Schema Modifications
 
-enum ConsoleStatus {
-  available
-  reserved
-}
+To support Auth.js and Prisma Adapter, we need to extend our `AdminUser` model or implement the standard Auth.js models (`Account`, `Session`, `User`, `VerificationToken`).
 
-model Console {
-  id        String        @id @default(uuid())
-  name      String
-  status    ConsoleStatus @default(available)
-  games     ConsoleGame[]
-  createdAt DateTime      @default(now())
-  updatedAt DateTime      @updatedAt
+### Updated `AdminUser` Model
 
-  @@map("consoles")
-}
+The current `AdminUser` table needs to be compatible with Auth.js. We will rename it to `User` (standard) and keep our custom fields.
 
-model Game {
-  id          String        @id @default(uuid())
-  name        String
-  imageUrl    String?       @map("image_url")
-  description String
-  consoles    ConsoleGame[]
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-
-  @@map("games")
-}
-
-model ConsoleGame {
-  id        String   @id @default(uuid())
-  console   Console  @relation(fields: [consoleId], references: [id], onDelete: Cascade)
-  consoleId String   @map("console_id")
-  game      Game     @relation(fields: [gameId], references: [id], onDelete: Cascade)
-  gameId    String   @map("game_id")
-  createdAt DateTime @default(now()) @map("created_at")
-
-  @@unique([consoleId, gameId])
-  @@map("console_games")
-}
-
+```prisma
 model User {
   id            String    @id @default(cuid())
   name          String?
@@ -61,9 +22,7 @@ model User {
   
   // Custom Store Admin fields
   isApproved    Boolean   @default(false) @map("is_approved")
-  createdAt     DateTime  @default(now()) @map("created_at")
-  updatedAt     DateTime  @updatedAt @map("updated_at")
-
+  
   @@map("users")
 }
 
@@ -75,7 +34,7 @@ model Account {
   providerAccountId  String  @map("provider_account_id")
   refresh_token      String? @db.Text
   access_token       String? @db.Text
-  expires_at         Int?
+  expires_at         int?
   token_type         String?
   scope              String?
   id_token           String? @db.Text
@@ -105,3 +64,10 @@ model VerificationToken {
   @@unique([identifier, token])
   @@map("verification_tokens")
 }
+```
+
+## Migration Rationale
+
+- **Standard Models**: Adhering to the [Auth.js Prisma Schema](https://authjs.dev/reference/adapter/prisma) ensures perfect compatibility with the adapter.
+- **`isApproved` Flag**: This custom boolean remains our source of truth for dashboard access.
+- **Naming**: Renaming `AdminUser` to `User` simplifies the NextAuth configuration, but it will still represent the admin/employee accounts.

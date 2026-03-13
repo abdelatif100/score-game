@@ -23,8 +23,8 @@
 
 ### Features
 
-- [ ] **Google OAuth Integration** - Restricted login for employees. `[M]`
-- [ ] **Admin Approval System** - Manual database-level approval for new admin accounts. `[S]`
+- [x] **Google OAuth Integration** - Restricted login for employees. `[M]`
+- [x] **Admin Approval System** - Manual database-level approval for new admin accounts. `[S]`
 - [ ] **Console Management** - Add/Edit/Delete consoles and toggle status. `[M]`
 - [ ] **Game Management** - Add/Edit/Delete games in the catalog. `[M]`
 - [ ] **Relation Management** - Update which games are installed on which consoles. `[S]`

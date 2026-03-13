@@ -2,7 +2,7 @@ import React from 'react';
 import { prisma } from '@/lib/prisma';
 import { Badge } from '@/components/ui/badge';
 import { PricingSection } from '@/components/pricing-section';
-import { ConsoleCard, ConsoleStatus, PreviewGame } from '@/components/console-card';
+import { ConsoleCard, ConsoleStatus } from '@/components/console-card';
 
 export const revalidate = 60; // Revalidate every minute
 

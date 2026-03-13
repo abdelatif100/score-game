@@ -1,4 +1,3 @@
-import 'dotenv/config'
 import { PrismaClient } from '@prisma/client'
 import { PrismaPg } from '@prisma/adapter-pg'
 import pg from 'pg'
@@ -6,6 +5,7 @@ import pg from 'pg'
 const connectionString = process.env.DATABASE_URL?.replace('prisma+postgres://', 'postgres://')
 
 const pool = new pg.Pool({ connectionString })
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const adapter = new PrismaPg(pool as any)
 
 const prisma = new PrismaClient({
@@ -52,6 +52,7 @@ async function main() {
     { name: 'كيربي أند ذا فورجوتن لاند', description: 'انضم إلى كيربي في رحلة لا تُنسى عبر عالم غامض.' },
   ]
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const games: Record<string, any> = {}
   for (const data of gamesData) {
     const game = await prisma.game.create({ data })
@@ -96,6 +97,7 @@ async function main() {
     const consoleObj = await prisma.console.create({
       data: {
         name: c.name,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         status: c.status as any,
       }
     })

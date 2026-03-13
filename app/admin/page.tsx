@@ -49,7 +49,7 @@ export default async function AdminDashboard() {
               <CardContent>
                 <div className="text-2xl font-bold">تغيير حالة الأجهزة</div>
                 <p className="text-xs text-muted-foreground pt-1">
-                  تحديث حالة الأجهزة إلى "متوفر" أو "محجوز"
+                  تحديث حالة الأجهزة إلى &quot;متوفر&quot; أو &quot;محجوز&quot;
                 </p>
               </CardContent>
             </Card>

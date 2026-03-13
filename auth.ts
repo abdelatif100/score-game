@@ -1,7 +1,7 @@
 import NextAuth from "next-auth"
 import { PrismaAdapter } from "@auth/prisma-adapter"
 import Google from "next-auth/providers/google"
-import prisma from "@/lib/prisma"
+import { prisma } from "@/lib/prisma"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: PrismaAdapter(prisma),
@@ -10,7 +10,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     strategy: "jwt",
   },
   callbacks: {
-    async signIn({ user }) {
+    async signIn() {
       // If the user doesn't exist in our custom fields, we don't need to do anything here
       // Auth.js Prisma adapter will handle user creation automatically.
       // isApproved defaults to false as per schema.

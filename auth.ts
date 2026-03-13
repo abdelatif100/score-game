@@ -6,15 +6,17 @@ import { authConfig } from "./auth.config"
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
+  secret: process.env.AUTH_SECRET,
   adapter: PrismaAdapter(prisma),
   providers: [
     Google({
       clientId: process.env.AUTH_GOOGLE_ID,
       clientSecret: process.env.AUTH_GOOGLE_SECRET,
+      allowDangerousEmailAccountLinking: true,
     }),
   ],
   trustHost: true,
-  debug: process.env.NODE_ENV === "development" || true, // Temporarily true to debug Vercel
+  debug: true, // Keep debug true for now to capture the actual error in Vercel logs
   callbacks: {
     ...authConfig.callbacks,
     async jwt({ token, user, trigger }) {

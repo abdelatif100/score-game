@@ -7,7 +7,8 @@ import { authConfig } from "./auth.config"
 export const { handlers, auth, signIn, signOut } = NextAuth({
   ...authConfig,
   adapter: PrismaAdapter(prisma),
-  providers: [Google], // Re-add Google provider for server-side
+  providers: [Google],
+  trustHost: true,
   callbacks: {
     ...authConfig.callbacks,
     async jwt({ token, user, trigger }) {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { prisma } from '@/lib/prisma';
+import { Badge } from '@/components/ui/badge';
 import { PricingSection } from '@/components/pricing-section';
 import { ConsoleCard, ConsoleStatus, PreviewGame } from '@/components/console-card';
 
@@ -38,6 +39,7 @@ async function getConsoles() {
 
 export default async function ConsolesPage() {
   const consoles = await getConsoles();
+  const availableCount = consoles.filter((c) => c.status === 'available').length;
 
   return (
     <div className="container mx-auto py-10 px-4 min-h-screen">
@@ -45,6 +47,11 @@ export default async function ConsolesPage() {
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-4 italic uppercase">
           الأجهزة والتوفر
         </h1>
+        <div className="flex justify-center mb-6">
+          <Badge variant="outline" className="bg-emerald-50 text-emerald-700 border-emerald-200 px-4 py-1.5 text-sm font-bold uppercase tracking-widest shadow-sm">
+            {availableCount} أجهزة متاحة الآن
+          </Badge>
+        </div>
         <p className="text-zinc-500 max-w-2xl mx-auto">
           توفر أجهزة الألعاب في الوقت الفعلي. تصفح الألعاب المثبتة واطلع على الأسعار قبل زيارتك.
         </p>
